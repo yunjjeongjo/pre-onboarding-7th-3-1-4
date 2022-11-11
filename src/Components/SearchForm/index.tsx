@@ -7,7 +7,6 @@ import { selectState } from "@/lib/state/atom";
 import SearchListItem from "../SearchListItem";
 
 const SearchForm = () => {
-  const MAX_COUNT = 10;
   const { fetchData, data, query, setQuery } = useSearch();
   const [timer, setTimer] = useState<NodeJS.Timeout>();
   const [selectedIndex, setSelectedIndex] = useRecoilState(selectState);
@@ -33,12 +32,12 @@ const SearchForm = () => {
     if (actionIgnoreKeys.includes(e.key)) {
       if (e.key === actionIgnoreKeys[0]) {
         setSelectedIndex((selectedIndex) =>
-          selectedIndex === 0 ? MAX_COUNT - 1 : selectedIndex - 1
+          selectedIndex === 0 ? data.length - 1 : selectedIndex - 1
         );
       }
       if (e.key === actionIgnoreKeys[1]) {
         setSelectedIndex((selectedIndex) =>
-          selectedIndex === MAX_COUNT - 1 ? 0 : selectedIndex + 1
+          selectedIndex === data.length - 1 ? 0 : selectedIndex + 1
         );
       }
     }
