@@ -4,7 +4,7 @@
 
 ## 개발 조건 및 환경
 
-- 언어 : TypeScript
+- 언어 - TypeScript
 - 사용 기술스택
     - 전역 상태관리 라이브러리 - Recoil
     - 스타일 관련 라이브러리 - styled-components
